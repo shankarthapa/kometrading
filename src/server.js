@@ -18,6 +18,7 @@ app.prepare().then(() => {
         console.log('connected to server ', socket.client.id);
         socket.on('INIT_TRADE', (req) => {
             console.log('came here init ', req);
+            socket.emit('TRADE_COMPLETE', { msg: 'trade done from socket' });
         });
     });
 
