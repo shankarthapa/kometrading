@@ -32,6 +32,10 @@ export default function Home() {
       setScoketLogs([...scoketLogs]);
       scoketLogs.push(resp.msg);
       setScoketLogs([...scoketLogs]);
+
+      if (resp.reset) {
+        setIsWaiting(false);
+      }
     }
 
     const onTradeComplete = (resp: any) => {
